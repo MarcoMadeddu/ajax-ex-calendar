@@ -6,11 +6,11 @@ $(document).ready(function () {
     /**
      * SETUP
      */
-
-    // Punto di partenza
+// V A R I A B I L I 
+    var next = $(".next");
+    var prev =$(".prev");
+    var monthList=$(".month-list")
     var baseMonth = moment('2018-01-01'); 
-
-    // Init Hndlenars
     var source = $('#day-template').html();
     var template = Handlebars.compile(source);
 
@@ -19,6 +19,39 @@ $(document).ready(function () {
 
     // ottieni festività mese corrente
     printHoliday(baseMonth);
+
+    prev.click(function(){
+        if(baseMonth.month()== 0){
+            alert("Sei già a Gennaio 2018!");
+        }
+        else{
+            baseMonth.remove(1, "M");
+            monthList.children().remove();
+            printMonth(template, baseMonth);
+ 
+            // ottieni festività mese corrente
+            printHoliday(baseMonth);
+            
+        }
+
+    })
+
+    next.click(function(){
+        if(baseMonth.month()== 11){
+            alert("Sei già a Dicembre 2018!");
+        }
+        else{
+            baseMonth.add(1, "M");
+            monthList.children().remove();
+            printMonth(template, baseMonth);
+ 
+            // ottieni festività mese corrente
+            printHoliday(baseMonth);
+            
+        }
+    })
+
+   
 
 }); // <-- End doc ready
 
