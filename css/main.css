@@ -6,15 +6,55 @@
 
 body {
     font-family: sans-serif;
+    background-image: linear-gradient(90deg, rgb(20, 217, 61) 0%, rgb(57, 73, 152) 43%, rgb(57, 73, 152) 100%);
+    color: white;
 }
 
 .container {
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 90vh;
 }
 
+.command{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.month-list{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    
+    width: 80%;
+    
+}
+
+.month-list li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: calc(93% / 7);
+    margin: 5px;
+    border: 5px solid white;
+    border-radius: 10px;
+    height: 80px;
+    text-align: center;
+    transition: transform 0.4s;
+}
+
+li:hover{
+    transform: scale(1.1);
+}
+
+
+
 li.holiday {
-    color: red;
+   background-image: linear-gradient(90deg, rgb(152, 57, 57) 0%, rgb(217, 31, 20) 43%, rgb(152, 57, 57) 100%);
 }
 
 button{

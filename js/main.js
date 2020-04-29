@@ -25,7 +25,7 @@ $(document).ready(function () {
             alert("Sei già a Gennaio 2018!");
         }
         else{
-            baseMonth.remove(1, "M");
+            baseMonth.subtract(1, "M");
             monthList.children().remove();
             printMonth(template, baseMonth);
  
@@ -83,7 +83,7 @@ function printMonth(template, date) {
         // imposta dati template
         var context = {
             class: 'day',
-            day: thisDate.format('DD MMMM'),
+            day: thisDate.format('DD'),
             completeDate: thisDate.format('YYYY-MM-DD')
         };
 
